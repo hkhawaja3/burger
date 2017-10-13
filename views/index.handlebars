@@ -1,0 +1,49 @@
+{{!-- View setup Setup the index.handlebars to have the template that Handlebars can render onto. Create a button in index.handlebars that will submit the user input into the database. --}}
+<div class="row">
+  <div class="col-md-8 eaten">
+    <h2 class='text-center'>Burgers to eat!!</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Burger Name</th>
+          <th>Devour it!</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each burgers}} {{#unless this.devoured}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td><h4>{{this.burger_name}}</h4></td>
+          <td>
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="true">
+              <button class='btn btn-primary' type="submit">Devour this bad boy!</button>
+            </form>
+          </td>
+        </tr>
+        {{/unless}} {{/each}}
+    </table>
+  </div>
+  <div class="col-md-4 non-eaten">
+    <h2 class='text-center'>Devoured Burgers!</h2>
+    <table class='table center'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>ID</th>
+          <th>Burger Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each burgers}} {{#if this.devoured}}
+        <tr>
+          <td></td>
+          <td>{{this.id}}</td>
+          <td>{{this.burger_name}}</td>
+        </tr>
+        {{/if}} {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

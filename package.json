@@ -1,0 +1,26 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "Creating an application for burgers",
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkhawaja3/burger.git"
+  },
+  "author": "Hamza Khawaja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hkhawaja3/burger/issues"
+  },
+  "homepage": "https://github.com/hkhawaja3/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1"
+  }
+}
